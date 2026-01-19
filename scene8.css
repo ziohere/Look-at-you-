@@ -1,0 +1,113 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  overflow: hidden;
+  font-family: 'Geo', monospace;
+}
+
+/* CAMERA */
+#camera {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: scaleX(-1);
+  opacity: 0;
+  z-index: 1;
+}
+
+#halftone {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+}
+
+/* EYE */
+#eye {
+  position: fixed;
+  inset: 0;
+  background: url("eye-openclose.gif") center/cover no-repeat;
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 2s ease;
+  pointer-events: none;
+}
+
+/* BLACK */
+#black {
+  position: fixed;
+  inset: 0;
+  background: black;
+  opacity: 0;
+  z-index: 4;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* UI */
+#ui {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 10;
+}
+
+/* DIALOGUE BOX */
+#dialogue-box {
+  width: 640px;
+  padding: 22px;
+  background: rgba(0,0,0,0.7);
+  border: 2px solid rgba(140,200,255,0.6);
+  border-radius: 22px;
+  color: #e6e6e6;
+  font-size: 28px;
+}
+
+#dialogue-text {
+  min-height: 64px;
+}
+
+/* BUTTONS */
+button {
+  width: 48px;
+  height: 48px;
+  background: rgba(0,0,0,0.7);
+  border: 2px solid rgba(140,200,255,0.6);
+  color: #e6e6e6;
+  font-size: 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+button.show {
+  opacity: 1;
+}
+
+/* TEXT EFFECTS */
+.breathing {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.micro-glitch {
+  animation: microGlitch 0.25s steps(2) infinite;
+}
+
+@keyframes microGlitch {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(-1px,1px); }
+  100% { transform: translate(0,0); }
+}

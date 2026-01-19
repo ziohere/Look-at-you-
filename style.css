@@ -1,0 +1,86 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+#gd-1 {
+  position: absolute;
+  width: 100vw;
+  height: auto;
+  z-index: 10;
+  background-size: cover;
+  transition: filter 0.1s, transform 0.1s;
+}
+
+#gd-1:hover {
+  filter: contrast(200%) brightness(120%) hue-rotate(20deg);
+  transform: translateX(-2px) skewX(2deg);
+  animation: glitch 0.3s linear infinite;
+}
+
+@keyframes glitch {
+  0% {
+    filter: contrast(200%) brightness(120%) hue-rotate(20deg);
+    transform: translateX(-2px) skewX(2deg);
+  }
+  20% {
+    filter: contrast(250%) brightness(130%) hue-rotate(-10deg);
+    transform: translateX(2px) skewX(-2deg);
+  }
+  40% {
+    filter: contrast(180%) brightness(110%) hue-rotate(10deg);
+    transform: translateX(-1px) skewX(1deg);
+  }
+  60% {
+    filter: contrast(220%) brightness(125%) hue-rotate(-15deg);
+    transform: translateX(1px) skewX(-1deg);
+  }
+  80% {
+    filter: contrast(200%) brightness(120%) hue-rotate(20deg);
+    transform: translateX(0px) skewX(0deg);
+  }
+  100% {
+    filter: contrast(200%) brightness(120%) hue-rotate(20deg);
+    transform: translateX(-2px) skewX(2deg);
+  }
+}
+#block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  height: 100vh;
+  background-color: rgb(26, 26, 26);
+  background-size: cover;
+  z-index: 11;
+}
+
+#start-btn {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  font-size: 5rem;
+  background-color: #ffffff00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 12;
+  font-family: 'Geo', sans-serif;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+#start-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+#start-btn:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}

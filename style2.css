@@ -1,0 +1,53 @@
+/* Basic CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;          /* ← CRITICAL */
+  overflow: hidden;   /* ← prevents bleed */
+  background: black;  /* ← matches your cinematic scene */
+  font-family: 'Geo', sans-serif;
+}
+
+/* Links */
+a {
+    color: #007acc;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Basic Button */
+button {
+    background: #007acc;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background: #005fa3;
+}
+#finding-1 {
+  position: absolute;
+  width: 100vw;
+  height: auto;
+  background-size: contain;
+  top: 0;
+  left: 0;
+  color: white;
+  font-family: 'Geo', sans-serif;
+}
+canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background: transparent;
+}
+
